@@ -3,23 +3,26 @@ import {
     Todo
 } from '../utils';
 
-function TodoList( {todos} ) {
+function TodoList( {todos, setTodos} ) {    
 
-  return (
+    return (
 
-    <section className='todolist-parent-container'>
-        <ul className='todolist'>
-            {todos.map( (todo, index) => (
-                <Todo 
-                    text={todo.text}
-                    completed={todo.completed}
-                    key={index}
-                />
-            ))}
-        </ul>
-    </section>
+        <section className='todolist-parent-container'>
+            <ul className='todolist'>
+                {todos.map( (todo, index) => (
+                    <Todo 
+                        text={todo.text}
+                        completed={todo.completed}
+                        key={index}
+                        todos={todos}
+                        todo={todo}
+                        setTodos={setTodos}
+                    />
+                ))}
+            </ul>
+        </section>
 
-  )
+    )
 }
 
 export default TodoList;

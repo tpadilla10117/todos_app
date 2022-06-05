@@ -21,6 +21,7 @@ const HomePage = () => {
             />
             <TodoList 
                 todos={todos}
+                setTodos={setTodos}
             />
 
         </main>

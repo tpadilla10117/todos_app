@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function Form( {setInputText, inputText, todos, setTodos} ) {
+
+/* State to generate unique Ids on each todo: */
+    const [todoId, setTodoId] = useState(0);
 
     const inputTextHandler = (event) => {
         setInputText(event.target.value);
@@ -13,9 +16,11 @@ function Form( {setInputText, inputText, todos, setTodos} ) {
             {
                 text: inputText,
                 completed: false,
+                id: `${todoId}`
             }
         ]);
         setInputText('');
+        setTodoId(todoId + 1);
     };
 
     return (
