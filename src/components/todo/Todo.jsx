@@ -23,7 +23,7 @@ function Todo( {text, todo, todos, setTodos}) {
 
     return (
         <div className='todo-parent-container'>
-            <li className='todo-item'>
+            <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
             {text}
             </li>
 
@@ -45,3 +45,4 @@ function Todo( {text, todo, todos, setTodos}) {
 };
 
 export default Todo;
+/* https://www.youtube.com/watch?v=pCA4qpQDZD8&t=1025s */
