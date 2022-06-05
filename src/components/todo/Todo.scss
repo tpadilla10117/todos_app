@@ -1,0 +1,16 @@
+.todo-parent-container {
+    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+
+    .todo-item {
+        list-style: none;
+        margin: 0 1rem 0 0;
+    }
+
+    .todo-item-complete, .todo-item-delete {
+            margin: 0 1rem 0 0;
+    }
+
+}

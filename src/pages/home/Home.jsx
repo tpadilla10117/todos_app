@@ -19,7 +19,9 @@ const HomePage = () => {
                 todos={todos}
                 setTodos={setTodos}
             />
-            <TodoList />
+            <TodoList 
+                todos={todos}
+            />
 
         </main>
     );
