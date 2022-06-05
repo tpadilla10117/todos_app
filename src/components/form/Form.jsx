@@ -1,42 +1,62 @@
 import React from 'react';
 
-function Form() {
-  return (
-    <form className='todoform-parent-container'>
-        <input
-            type='text'
-            className='todoform-input'
-            id='todoform-input'
-            placeholder='Enter some text'
-        />
-        <label htmlFor='todoform-input'/>
+function Form( {setInputText, inputText, todos, setTodos} ) {
 
-        <button
-            type='submit'
-            className='todoform-button'
-        >
-            Submit
-        </button>
+    const inputTextHandler = (event) => {
+        setInputText(event.target.value);
+    };
 
-        <div className='todoform-select-parent-container'>
-            <select id='todoform-select' className='todoform-select'>
-                <option value='all'>
-                    All
-                </option>
-                <option value='completed'>
-                    Completed
-                </option>
-                <option value='uncompleted'>
-                    Uncompleted
-                </option>
+    const submitTodoHandler = (event) => {
+        event.preventDefault();
+        setTodos([
+            ...todos,
+            {
+                text: inputText,
+                completed: false,
+            }
+        ]);
+        setInputText('');
+    };
 
-            </select>
-            <label htmlFor='todoform-select'/>
-        </div>
+    return (
+        <form className='todoform-parent-container'>
+            <input
+                type='text'
+                className='todoform-input'
+                id='todoform-input'
+                placeholder='Enter some text'
+                value={inputText}
+                onChange={inputTextHandler}
+            />
+            <label htmlFor='todoform-input'/>
+
+            <button
+                type='submit'
+                className='todoform-button'
+                onClick={submitTodoHandler}
+            >
+                Submit
+            </button>
+
+            <div className='todoform-select-parent-container'>
+                <select id='todoform-select' className='todoform-select'>
+                    <option value='all'>
+                        All
+                    </option>
+                    <option value='completed'>
+                        Completed
+                    </option>
+                    <option value='uncompleted'>
+                        Uncompleted
+                    </option>
+
+                </select>
+                <label htmlFor='todoform-select'/>
+            </div>
 
 
-    </form>
-  )
+        </form>
+    )
 }
 
 export default Form;

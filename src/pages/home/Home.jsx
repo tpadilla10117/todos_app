@@ -1,16 +1,26 @@
-import React from 'react';
-import './Home.scss';
+import React, { useState } from 'react';
+
 import {
-    Form
+    Form,
+    TodoList
 } from '../../components/utils.js';
 
 const HomePage = () => {
 
+    const [ inputText, setInputText ] = useState('');
+    const [ todos, setTodos ] = useState([]);
+
     return (
         <main id="homepage-parent-container">
     
-            <Form />
-            
+            <Form 
+                setInputText={setInputText} 
+                inputText={inputText}
+                todos={todos}
+                setTodos={setTodos}
+            />
+            <TodoList />
+
         </main>
     );
 };

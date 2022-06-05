@@ -1,11 +1,16 @@
 .todoform-parent-container {
-    
+    border: 1px solid red;
+  /*   display: flex;
+    justify-content: center;
+    align-items: center; */
 
     .todoform-input {
-
+        width: 50%;
+        border: 2px solid blue;
     }
 
     .todoform-button {
-        
+        padding: 10px;
+        border-radius: 5px;
     }
 }
