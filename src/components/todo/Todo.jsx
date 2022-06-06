@@ -30,12 +30,14 @@ function Todo( {text, todo, todos, setTodos}) {
             <button 
                 className='todo-item-complete'
                 onClick={completeHandler}
+                aria-label='complete todo icon'
             >
             +
             </button>
             <button 
                 className='todo-item-delete'
                 onClick={deleteHandler}
+                aria-label='uncomplete todo icon'
             >
             -
             </button>

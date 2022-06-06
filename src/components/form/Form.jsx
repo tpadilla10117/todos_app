@@ -1,14 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function Form( {setInputText, inputText, todos, setTodos, setStatus} ) {
 
 /* State to generate unique Ids on each todo: */
-    const [todoId, setTodoId] = useState(0);
 
     const inputTextHandler = (event) => {
         setInputText(event.target.value);
     };
-/* TODO: The local storage gets messed up because the saved todos end up with similar id: */
+
     const submitTodoHandler = (event) => {
         event.preventDefault();
         setTodos([
@@ -16,11 +15,10 @@ function Form( {setInputText, inputText, todos, setTodos, setStatus} ) {
             {
                 text: inputText,
                 completed: false,
-                id: `${todoId}`
+                id: Math.random() * 1000
             }
         ]);
         setInputText('');
-        setTodoId(todoId + 1);
     };
 
 /* Function to handle dropdown state: */

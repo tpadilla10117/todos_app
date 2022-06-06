@@ -1,13 +1,17 @@
 .todo-parent-container {
     border: 1px solid green;
     display: flex;
-    justify-content: center;
-    width: 500px;
+    width: 300px;
+    margin: 0 0 1rem 0;
+    height: 2rem;
+    align-items: center;
+    justify-content: space-between;
 
     .todo-item {
         list-style: none;
         margin: 0 1rem 0 0;
         text-decoration: none;
+        width: 50%;
 
         &.completed {
             text-decoration: line-through;
@@ -16,6 +20,7 @@
 
     .todo-item-complete, .todo-item-delete {
             margin: 0 1rem 0 0;
+            cursor: pointer;
     }
 
 }
