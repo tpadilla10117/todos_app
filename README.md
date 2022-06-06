@@ -1,8 +1,8 @@
 # App Description
 
-- An application that uses the GPT-3 AI model created by OpenAI { https://openai.com/api/ }.  The model can process plain text prompts and produce outputs not dissimilar to human writing.
+- An application that generates a list of to-dos based on user input in a form field.
 
-- In this application, users can type in a prompt (e.g. Write a poem about Dinosaurs, I think cats are cute, etc.) in a form input field.  Once a prompt is submitted via the 'Submit' button on the graphical interface, the GPT-3 will be reached via the text-curie-001 API and will respond with an interpreted output.
+- In this application, users can type in some text, click a button, and create a dynamic to-do list
 
 ## Table of Contents:
 * [Deployment](#Deployment)
@@ -16,10 +16,10 @@
 
 ## Deployment:
 
-- Via Vercel @ {https://fun-with-gpt-3-g3zzqyhi1-tpadilla10117.vercel.app/ }
+<!-- - Via Vercel @ {https://fun-with-gpt-3-g3zzqyhi1-tpadilla10117.vercel.app/ } -->
 
 ## Usage Instructions:
-    1) Navigate to the deployed URL at: 
+   <!--  1) Navigate to the deployed URL at: 
 
     2) Click on the form input field, colored white and immediately after the Page's main title, 'Fun with A.I.'
 
@@ -27,7 +27,7 @@
 
     4) Once a prompt has been typed out, click the large blue 'Submit' button
 
-    5) Enjoy a response returned by the GPT-3 AI model in the feed at the bottom of the page!
+    5) Enjoy a response returned by the GPT-3 AI model in the feed at the bottom of the page! -->
 
 
 ## Cloning Instructions:
@@ -36,7 +36,7 @@
     1a) Create a .env file
     1b) `npm i node-modules` In the terminal
 
-- 2) Create a free account and receive an API Key from  OpenAI:
+<!-- - 2) Create a free account and receive an API Key from  OpenAI:
 
     - 2a) Go to https://beta.openai.com/signup
     - 2b) Enter your email address and password
@@ -44,21 +44,20 @@
     - 2d) Verify your phone number by entering the code that is sent to you via SMS
     - 2e) Once logged in, go to https://beta.openai.com/account/api-keys to get your secret API key
 
-- 3) Save your secret API Key in your .env file -> ***be sure to add your .env to a .gitignore file to avoid commiting the key publically to a repo!***
+- 3) Save your secret API Key in your .env file -> ***be sure to add your .env to a .gitignore file to avoid commiting the key publically to a repo!*** -->
 
-- NOTES:
+<!-- - NOTES:
 
     - Once you have your secret API key you can send requests from your application. Please note that you have $18.00 of free credits - consider using a less expensive model such as “text-curie-001” to ensure that you don’t exceed the limit.
 
     - Important: You should never expose API keys on the client side in production code because anyone on the internet will have access to your secret key and can make requests with your account. It is however acceptable for the purpose of this application and testing since it won’t be widely available and we don’t expect you to have a backend server.
 
     - You should consider using environment variables or a key manager to avoid committing your secret API key to your git repository. Check the documentation for your hosting provider for how to do this.
-
+ -->
 
 ## Tech Stack:
 
-- Node.js, JS, React.js, HTML, SCSS
-- NASA APOD API { https://github.com/nasa/apod-api }
+- Node.js, JS, React.js, HTML, SCSS, Material UI
 
 ## Dependencies:
 
@@ -79,18 +78,17 @@ Reference: https://www.freecodecamp.org/news/how-to-use-node-environment-variabl
 
 ## Limitations & Ideas For Improvement:
 
-- As of 05/12/22:
+<!-- - As of 05/12/22:
 
     - Reset the form field once a user clicks the 'Submit' button
     - App is MOSTLY responsive; should make fully responsive
     - Let the user choose the AI engine from a select box
     - Add some presets for the user to quickly send a good prompt
-    - Make the app more specific to a single purpose. See the OpenAI Examples and prompt design docs for inspiration.
+    - Make the app more specific to a single purpose. See the OpenAI Examples and prompt design docs for inspiration. -->
 
 
 ## TroubleShooting & Bugs:
-    - **NOTE: UI form field doesn't clear upon submitting a prompt
-    - **NOTE: 
+  
 
 ## Getting Started with Create React App
 

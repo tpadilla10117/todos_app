@@ -50,4 +50,3 @@ function Todo( {text, todo, todos, setTodos}) {
 };
 
 export default Todo;
-/* https://www.youtube.com/watch?v=pCA4qpQDZD8&t=1025s */
