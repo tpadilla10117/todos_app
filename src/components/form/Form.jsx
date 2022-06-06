@@ -8,7 +8,7 @@ function Form( {setInputText, inputText, todos, setTodos, setStatus} ) {
     const inputTextHandler = (event) => {
         setInputText(event.target.value);
     };
-
+/* TODO: The local storage gets messed up because the saved todos end up with similar id: */
     const submitTodoHandler = (event) => {
         event.preventDefault();
         setTodos([

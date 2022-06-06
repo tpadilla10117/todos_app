@@ -3,13 +3,13 @@ import {
     Todo
 } from '../utils';
 
-function TodoList( {todos, setTodos} ) {    
+function TodoList( {todos, setTodos, filteredTodoItems} ) {    
 
     return (
 
         <section className='todolist-parent-container'>
             <ul className='todolist'>
-                {todos.map( (todo, index) => (
+                {filteredTodoItems.map( (todo, index) => (
                     <Todo 
                         text={todo.text}
                         completed={todo.completed}

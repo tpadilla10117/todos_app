@@ -13,17 +13,43 @@ const HomePage = () => {
     const [ status, setStatus ] = useState('all'); 
     const [ filteredTodoItems, setFilteredTodoItems ] = useState([]);
 
+/* Save Todos in LocalStorage: */
 
-/* Functions for filtering Todos: */
-    const filterHandler = () => {
-        if(status === 'completed') {
-            setFilteredTodoItems(todos.filter( todo => todo.completed === true ) );
-        } else if (status === 'uncompleted') {
-            setFilteredTodoItems(todos.filter( todo => todo.completed === false ) );
+    const retrieveTodosLocalStorage = () => {
+        if(localStorage.getItem('todos') === null) {
+            localStorage.setItem('todos', JSON.stringify([]) );
         } else {
-            setFilteredTodoItems(todos);
+            let todoLocal = JSON.parse(localStorage.getItem('todos'));
+            setTodos(todoLocal);
         }
     };
+
+/* Functions for filtering Todos: */
+
+    useEffect( () => {
+        retrieveTodosLocalStorage();
+    }, []);
+
+    useEffect( () => {
+
+        const filterHandler = () => {
+            if(status === 'completed') {
+                setFilteredTodoItems(todos.filter( todo => todo.completed === true ) );
+            } else if (status === 'uncompleted') {
+                setFilteredTodoItems(todos.filter( todo => todo.completed === false ) );
+            } else {
+                setFilteredTodoItems(todos);
+            }
+        };
+
+        const saveTodosLocalStorage = () => {
+            localStorage.setItem('todos', JSON.stringify(todos))
+        };
+
+        filterHandler();
+        saveTodosLocalStorage();
+
+    }, [todos, status]);
 
     return (
         <main id="homepage-parent-container">
@@ -39,6 +65,7 @@ const HomePage = () => {
             <TodoList 
                 todos={todos}
                 setTodos={setTodos}
+                filteredTodoItems={filteredTodoItems}
             />
 
         </main>
