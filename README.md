@@ -71,6 +71,10 @@
 
 Reference: https://www.freecodecamp.org/news/how-to-use-node-environment-variables-with-a-dotenv-file-for-node-js-and-npm/
 
+### `npm install @mui/material @emotion/react @emotion/styled`
+### `npm install @mui/icons-material`
+- Material UI (https://mui.com/material-ui/getting-started/installation/)
+
 - react, react-dom, react-scripts, sass, node-sass, cors
 
 ## Limitations & Ideas For Improvement:

@@ -1,4 +1,7 @@
 import React from 'react';
+import CheckIcon from '@mui/icons-material/Check';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { SvgIcon } from '@mui/material';
 
 function Todo( {text, todo, todos, setTodos}) {
 
@@ -32,14 +35,14 @@ function Todo( {text, todo, todos, setTodos}) {
                 onClick={completeHandler}
                 aria-label='complete todo icon'
             >
-            +
+                <SvgIcon component={CheckIcon} />
             </button>
             <button 
                 className='todo-item-delete'
                 onClick={deleteHandler}
                 aria-label='uncomplete todo icon'
             >
-            -
+                <SvgIcon component={DeleteIcon} />
             </button>
         </div>
 
