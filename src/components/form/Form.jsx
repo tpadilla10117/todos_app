@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function Form( {setInputText, inputText, todos, setTodos} ) {
+function Form( {setInputText, inputText, todos, setTodos, setStatus} ) {
 
 /* State to generate unique Ids on each todo: */
     const [todoId, setTodoId] = useState(0);
@@ -21,6 +21,11 @@ function Form( {setInputText, inputText, todos, setTodos} ) {
         ]);
         setInputText('');
         setTodoId(todoId + 1);
+    };
+
+/* Function to handle dropdown state: */
+    const statusHandler = (event) => {
+        setStatus(event.target.value);
     };
 
     return (
@@ -44,7 +49,7 @@ function Form( {setInputText, inputText, todos, setTodos} ) {
             </button>
 
             <div className='todoform-select-parent-container'>
-                <select id='todoform-select' className='todoform-select'>
+                <select id='todoform-select' className='todoform-select' onChange={statusHandler}>
                     <option value='all'>
                         All
                     </option>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {
     Form,
@@ -7,8 +7,23 @@ import {
 
 const HomePage = () => {
 
+/* State for form inputs, todos, dropdown menu, and filtered todos:  */
     const [ inputText, setInputText ] = useState('');
     const [ todos, setTodos ] = useState([]);
+    const [ status, setStatus ] = useState('all'); 
+    const [ filteredTodoItems, setFilteredTodoItems ] = useState([]);
+
+
+/* Functions for filtering Todos: */
+    const filterHandler = () => {
+        if(status === 'completed') {
+            setFilteredTodoItems(todos.filter( todo => todo.completed === true ) );
+        } else if (status === 'uncompleted') {
+            setFilteredTodoItems(todos.filter( todo => todo.completed === false ) );
+        } else {
+            setFilteredTodoItems(todos);
+        }
+    };
 
     return (
         <main id="homepage-parent-container">
@@ -18,6 +33,8 @@ const HomePage = () => {
                 inputText={inputText}
                 todos={todos}
                 setTodos={setTodos}
+                status={status}
+                setStatus={setStatus}
             />
             <TodoList 
                 todos={todos}
